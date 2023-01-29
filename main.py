@@ -11,3 +11,5 @@ if choice == 1:
     import signup
 if choice == 2:
     import signin
+if choice == 3:
+    exit()
