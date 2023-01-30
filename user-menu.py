@@ -6,6 +6,7 @@ f = open("locations.txt", "r")
 lines = f.readlines()
 for line in lines:
     print(line)
+    print("line")
 f.close()
 
 print("Enter your desired action")
