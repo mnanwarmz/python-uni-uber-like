@@ -2,11 +2,10 @@ print("Welcome to Uber-Like")
 print("Listed below is a list of the locations we currently serve")
 
 # Read from locations.txt file
-f = open("locations.txt", "r")
+f = open("resources/locations.txt", "r")
 lines = f.readlines()
 for line in lines:
     print(line)
-    print("line")
 f.close()
 
 print("Enter your desired action")
