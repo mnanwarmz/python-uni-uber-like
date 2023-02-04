@@ -1,40 +1,49 @@
+from auth.session import loggedInUser
 print("Welcome to the Ordering Menu", "\n")
 
-pickup_location = input("Where would like to be picked up?: ")
-destination = input("Where would you like to go?: ")
+pickupLocationId = input("Where would like to be picked up [Enter ID of Location]?: ")
+destinationId = input("Where would you like to go? [Enter ID of Location]: ")
 
-LocationExist = True
+locationExist = False
 f = open("resources/locations.txt", "r")
-Lines = f.readlines()
-while LocationExist == True:
-    for line in Lines:
-        if pickup_location in line:
-            LocationExist = True
+lines = f.readlines()
+while locationExist == False :
+    for index, line in enumerate(lines):
+        if pickupLocationId in line:
+            locationExist = True
             break
-        else:
-            LocationExist = False
-    f.close()
-    if LocationExist == False:
+    if index == len(lines) - 1:
         print(
             "Sorry, we do not have a driver in that area yet. Please try another location")
-        pickup_location = input("Where would like to be picked up?: ")
+        pickupLocationId = input("Where would you like to be picked up?: ")
+
+f.close()
 
 
-DestinationExist = True
-while DestinationExist == True:
+DestinationExist = False
+while DestinationExist == False:
     f = open("resources/locations.txt", "r")
-    for line in f:
-        if destination in line:
+    lines = f.readlines()
+    for index, line in enumerate(lines):
+        if destinationId in line:
             DestinationExist = True
             break
-        else:
-            DestinationExist = False
-    f.close()
-    if DestinationExist == False:
+    if index == len(lines) - 1:
         print(
             "Sorry, we do not have a driver in that area yet. Please try another location")
-        destination = input("Where would you like to go?: ")
+        destinationId = input("Where would you like to go?: ")
 
-f = open("resources/rides.txt", "a")
-f.write(pickup_location+","+destination+"\n")
+    f.close()
+
+
+f = open("resources/orders.txt", "r")
+lines = f.readlines()
 f.close()
+f = open("resources/orders.txt", "a")
+orderId = len(lines) + 1
+f.write(str(orderId) + "," + str(loggedInUser.id) + "," + str(pickupLocationId) + "," + str(destinationId) + " \r ")
+f.close()
+
+print("Your ride has been ordered successfully")
+print("Pickup Location: ", pickupLocationId)
+print("Destination: ", destinationId)

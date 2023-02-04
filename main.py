@@ -1,3 +1,4 @@
+
 print("Welcome to Uber-Like")
 print("1. Sign Up")
 print("2. Sign In")
@@ -11,5 +12,6 @@ if choice == 1:
     import auth.signup
 if choice == 2:
     import auth.session
+    import usermenu
 if choice == 3:
     exit()
