@@ -8,9 +8,8 @@ while choice < 1 or choice > 2:
     print("Invalid choice")
     choice = int(input("Enter your choice: "))
 if choice == 1:
-    import signup
+    import auth.signup
 if choice == 2:
-    import signin
-    import usermenu
+    import auth.session
 if choice == 3:
     exit()

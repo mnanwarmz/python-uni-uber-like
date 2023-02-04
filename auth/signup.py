@@ -27,5 +27,6 @@ while not passwordAccepted:
 
 # Write the data in resources/users.txt
 f = open("resources/users.txt", "a")
-f.write(email+","+password+","+name+"\n")
+userId = len(Lines) + 1
+f.write(str(userId)+","+email+","+password+","+name+"\n")
 f.close()

@@ -14,14 +14,16 @@ print("2. View your ride history")
 print("3. View your profile")
 print("4. Sign out")
 
-choice = int(input("Enter your choice: "))
+choice = int(input("Enter your choice (e.g.: 1): "))
+while choice < 1 or choice > 4:
+    print("Invalid choice")
+    choice = int(input("Enter your choice: "))
+
 if choice == 1:
-    import order
-elif choice == 2:
+    import menu.order
+if choice == 2:
     import history
-elif choice == 3:
+if choice == 3:
     import profile
-elif choice == 4:
+if choice == 4:
     import main
-else:
-    print("Invalid Choice")
