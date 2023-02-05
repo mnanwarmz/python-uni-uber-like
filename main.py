@@ -5,7 +5,7 @@ print("2. Sign In")
 print("3. Exit")
 
 choice = int(input("Enter your choice: "))
-while choice < 1 or choice > 2:
+while choice < 1 or choice > 3:
     print("Invalid choice")
     choice = int(input("Enter your choice: "))
 if choice == 1:
