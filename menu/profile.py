@@ -1,4 +1,6 @@
+# Imports the loggedInUser from the session
 from auth.session import loggedInUser
+# Imports the updateName function from the user.py file
 from dictHandlers.user import updateName
 print("Your User Profile")
 print("ID: ", loggedInUser["id"])

@@ -14,7 +14,7 @@ while emailInFile == True:
             emailInFile = False
 f.close()
 
-
+# Checks if password is acceptable or not
 passwordAccepted = False
 while not passwordAccepted:
     password = input("Enter your password: ")

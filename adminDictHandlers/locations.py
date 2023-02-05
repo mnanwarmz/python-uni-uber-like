@@ -7,6 +7,7 @@ def allLocations():
     for line in lines:
         print(line.split(",")[0] + " " + line.split(",")[1])
 
+
 def addLocation(locationName):
     # Read from locations.txt file
     f = open("resources/locations.txt", "r")
@@ -15,6 +16,7 @@ def addLocation(locationName):
     # Add new location to locations.txt file
     f = open("resources/locations.txt", "a")
     f.write(locationName + "\n")
+
 
 def deleteLocation(locationId):
     # Read from locations.txt file
@@ -28,6 +30,7 @@ def deleteLocation(locationId):
             f.write(line)
     f.close()
 
+
 def updateLocation(locationId, locationName):
     # Read from locations.txt file
     f = open("resources/locations.txt", "r")
@@ -36,6 +39,7 @@ def updateLocation(locationId, locationName):
     # Update location from locations.txt file
     f = open("resources/locations.txt", "w")
     for line in lines:
+        # Splits the line into an array from the comma
         if line.split(",")[0] != locationId:
             f.write(line)
         else:

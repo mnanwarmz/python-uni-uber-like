@@ -18,6 +18,7 @@ if choice == "y":
     print("Order removed successfully")
 
 print("Updated Order History")
+# Display the new updated history
 orders = userOrders(loggedInUser["id"])
 for order in orders:
     print(order)
