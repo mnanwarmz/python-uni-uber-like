@@ -6,29 +6,27 @@ print("Login to the app")
 
 
 def signin(email, password):
-    f = open("resources/users.txt", "r")
-    lines = f.readlines()
-    auth = False
-    while auth == False:
-        for index, line in enumerate(lines):
-            if (email == line.split(",")[1] and password == line.split(",")[2]):
-                auth = True
-                userId = line.split(",")[0]
-                userEmail = line.split(",")[1]
-                userPassword = line.split(",")[2]
-                userName = line.split(",")[3]
-                user = {
-                    "id": userId,
-                    "email": userEmail,
-                    "password": userPassword,
-                    "name": userName
-                }
-                print("Welcome to Uber-Like")
-                return user
-            else:
-                if index == len(lines) - 1:
-                    print("Invalid Credentials, Try Again")
-                    email = input("Enter your email: ")
-                    password = input("Enter your password: ")
+    for filename in ['resources/admins.txt', 'resources/users.txt']:
+        with open(filename, "r") as f:
+            lines = f.readlines()
+            for line in lines:
+                if (email == line.split(",")[1] and password == line.split(",")[2]):
+                    userId = line.split(",")[0]
+                    userEmail = line.split(",")[1]
+                    userPassword = line.split(",")[2]
+                    userName = line.split(",")[3]
+                    role = "admin" if filename == 'resources/admins.txt' else "user"
+                    user = {
+                        "id": userId,
+                        "email": userEmail,
+                        "password": userPassword,
+                        "name": userName,
+                        "role": role
+                    }
+                    print("Welcome to Uber-Like")
+                    return user
 
-    f.close()
+    print("Invalid Credentials, Try Again")
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+    return signin(email, password)

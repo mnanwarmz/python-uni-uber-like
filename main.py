@@ -12,6 +12,9 @@ if choice == 1:
     import auth.signup
 if choice == 2:
     import auth.session
-    import usermenu
+    if auth.session.loggedInUser["role"] == "admin":
+        import adminmenu
+    if auth.session.loggedInUser["role"] == "user":
+        import usermenu
 if choice == 3:
     exit()

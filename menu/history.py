@@ -16,6 +16,8 @@ while choice != "y" and choice != "n":
 if choice == "y":
     removeOrder(input("Enter the ID of the order you would like to remove: "))
     print("Order removed successfully")
-    import menu.history
 
-
+print("Updated Order History")
+orders = userOrders(loggedInUser["id"])
+for order in orders:
+    print(order)
