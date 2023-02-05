@@ -45,7 +45,7 @@ lines = f.readlines()
 f.close()
 f = open("resources/orders.txt", "a")
 orderId = len(lines) + 1
-f.write(str(orderId) + "," + str(loggedInUser["id"]) + "," + str(pickupLocationId) + "," + str(destinationId) + " \r ")
+f.write(str(orderId) + "," + str(loggedInUser["id"]) + "," + str(pickupLocationId) + "," + str(destinationId) + "\n")
 f.close()
 
 print("Your ride has been ordered successfully")

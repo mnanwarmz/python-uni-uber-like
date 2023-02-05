@@ -5,7 +5,6 @@ def userOrders(userId):
     lines = [line.strip() for line in lines]
     orders = []
     for line in lines:
-        print(line.split(","))
         if userId == line.split(",")[1]:
             orderId = line.split(",")[0]
             userId = line.split(",")[1]
@@ -19,6 +18,9 @@ def userOrders(userId):
             }
             orders.append(order)
     f.close()
+
+    if len(orders) == 0:
+        return "No orders found"
     return orders
 
 def userHistory(userId):
