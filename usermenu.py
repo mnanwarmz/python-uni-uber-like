@@ -24,6 +24,11 @@ if choice == 1:
 if choice == 2:
     import menu.history
 if choice == 3:
-    import profile
+    import menu.profile
 if choice == 4:
-    import main
+    print("You have been signed out")
+    print("Thank you for using Uber-Like")
+    exit()
+
+# after user makes their choice return them to this page
+import usermenu

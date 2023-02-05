@@ -1,4 +1,6 @@
 from auth.session import loggedInUser
+from dictHandlers.location import locationName
+
 print("Welcome to the Ordering Menu", "\n")
 
 pickupLocationId = input("Where would like to be picked up [Enter ID of Location]?: ")
@@ -43,9 +45,9 @@ lines = f.readlines()
 f.close()
 f = open("resources/orders.txt", "a")
 orderId = len(lines) + 1
-f.write(str(orderId) + "," + str(loggedInUser.id) + "," + str(pickupLocationId) + "," + str(destinationId) + " \r ")
+f.write(str(orderId) + "," + str(loggedInUser["id"]) + "," + str(pickupLocationId) + "," + str(destinationId) + " \r ")
 f.close()
 
 print("Your ride has been ordered successfully")
-print("Pickup Location: ", pickupLocationId)
-print("Destination: ", destinationId)
+print("Pickup Location: ", locationName(pickupLocationId))
+print("Destination: ", locationName(destinationId))
