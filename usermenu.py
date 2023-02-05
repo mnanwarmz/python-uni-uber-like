@@ -22,7 +22,7 @@ while choice < 1 or choice > 4:
 if choice == 1:
     import menu.order
 if choice == 2:
-    import history
+    import menu.history
 if choice == 3:
     import profile
 if choice == 4:

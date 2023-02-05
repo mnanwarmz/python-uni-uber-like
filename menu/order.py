@@ -12,10 +12,11 @@ while locationExist == False :
         if pickupLocationId in line:
             locationExist = True
             break
-    if index == len(lines) - 1:
-        print(
-            "Sorry, we do not have a driver in that area yet. Please try another location")
-        pickupLocationId = input("Where would you like to be picked up?: ")
+        else:
+            if index + 1 == len(lines):
+                print(
+                    "Sorry, we do not have a driver in that area yet. Please try another location")
+                pickupLocationId = input("Where would you like to be picked up?: ")
 
 f.close()
 
@@ -28,10 +29,11 @@ while DestinationExist == False:
         if destinationId in line:
             DestinationExist = True
             break
-    if index == len(lines) - 1:
-        print(
-            "Sorry, we do not have a driver in that area yet. Please try another location")
-        destinationId = input("Where would you like to go?: ")
+        else:
+            if index + 1 == len(lines):
+                print(
+                    "Sorry, we do not have a driver in that area yet. Please try another location")
+                destinationId = input("Where would you like to go?: ")
 
     f.close()
 

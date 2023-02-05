@@ -1,4 +1,3 @@
-from auth.User import User
 print("Login to the app")
 # compare with resources/users.txt
 # if email and password are correct
@@ -18,8 +17,12 @@ def signin(email, password):
                 userEmail = line.split(",")[1]
                 userPassword = line.split(",")[2]
                 userName = line.split(",")[3]
-                user = User(userId, userEmail,
-                            userPassword, userName)
+                user = {
+                    "id": userId,
+                    "email": userEmail,
+                    "password": userPassword,
+                    "name": userName
+                }
                 print("Welcome to Uber-Like")
                 return user
             else:
