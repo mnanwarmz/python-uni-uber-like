@@ -27,3 +27,5 @@ if choice == 3:
     allLocations()
     addOrder(input("Enter the user ID of the order: "), input("Enter the pickup location ID of the order: "), input("Enter the destination ID of the order: "))
     print("Order added successfully")
+
+import adminmenu

@@ -25,3 +25,5 @@ if choice == 3:
 if choice == 4:
     addUser(input("Enter the email of the admin: "),input("Enter the password of the admin"), input("Enter the name of the admin: "))
     print("User added successfully")
+
+import adminmenu

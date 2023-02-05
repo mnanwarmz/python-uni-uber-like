@@ -22,6 +22,8 @@ def locations():
     if choice == 2:
         locationId = input("Enter the id of the location you would like to delete: ")
         # If not available, print "Location not found"
+        f = open("resources/locations.txt", "r")
+        lines = f.readlines()
         if locationId in lines:
             deleteLocation(locationId)
         else:
@@ -29,6 +31,8 @@ def locations():
     if choice == 3:
         locationId = input("Enter the id of the location you would like to change: ")
         # If not available, print "Location not found"
+        f = open("resources/locations.txt", "r")
+        lines = f.readlines()
         if locationId in lines:
             updateLocation(locationId, input("Enter the new name of the location: "))
         else:
