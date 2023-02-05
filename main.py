@@ -1,5 +1,5 @@
 # *********************************************************
-# Program: TL15_G1.py
+# Program: TL15_G01.py
 # Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
 # Tutorial Section: TL15 Group: G1
 # Trimester: 2215
