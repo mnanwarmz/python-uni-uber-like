@@ -1,3 +1,12 @@
+def allLocations():
+    # Read from locations.txt file
+    f = open("resources/locations.txt", "r")
+    lines = f.readlines()
+    f.close()
+    # Print all locations
+    for line in lines:
+        print(line.split(",")[0] + " " + line.split(",")[1])
+
 def addLocation(locationName):
     # Read from locations.txt file
     f = open("resources/locations.txt", "r")

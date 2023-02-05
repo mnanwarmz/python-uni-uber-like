@@ -3,12 +3,7 @@ def locations():
     print("Welcome to Uber-Like")
     print("Listed below is a list of the locations we currently serve")
 
-    # Read from locations.txt file
-    f = open("resources/locations.txt", "r")
-    lines = f.readlines()
-    for line in lines:
-        print(line)
-    f.close()
+    allLocations()
 
     print("Enter your desired action")
     print("1. Add a location")
