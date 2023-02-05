@@ -1,3 +1,4 @@
+# Remove an order from the orders.txt file based on their ID:
 def removeOrder(orderId):
     f = open("resources/orders.txt", "r")
     lines = f.readlines()

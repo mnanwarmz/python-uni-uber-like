@@ -1,7 +1,8 @@
+# Gets the location name from the location id
 def locationName(locationId):
     f = open("resources/locations.txt", "r")
     lines = f.readlines()
-    for index,line in enumerate(lines):
+    for index, line in enumerate(lines):
         if locationId == line.split(",")[0]:
             return line.split(",")[1]
         else:
