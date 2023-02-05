@@ -25,3 +25,15 @@ def userHistory(userId):
     orders = userOrders(userId)
     for order in orders:
         print(order)
+
+def updateName(userId,name):
+    f = open("resources/users.txt", "r")
+    lines = f.readlines()
+    for index,line in enumerate(lines):
+        if userId == line.split(",")[0]:
+            lines[index] = line.split(",")[0] + "," + line.split(",")[1] + "," + line.split(",")[2] + "," + name + "\n"
+
+    f.close()
+    f = open("resources/users.txt", "w")
+    f.writelines(lines)
+    f.close()
