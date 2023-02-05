@@ -1,4 +1,6 @@
 from adminDictHandlers.locations import *
+
+
 def locations():
     print("Welcome to Uber-Like")
     print("Listed below is a list of the locations we currently serve")
@@ -12,7 +14,7 @@ def locations():
     print("4. Return to admin menu")
 
     choice = int(input("Enter your choice (e.g.: 1): "))
-    while choice < 1 or choice > 3:
+    while choice < 1 or choice > 4:
         print("Invalid choice")
         choice = int(input("Enter your choice: "))
 
@@ -20,7 +22,8 @@ def locations():
         print("Enter the name of the location you would like to add")
         addLocation("locationName")
     if choice == 2:
-        locationId = input("Enter the id of the location you would like to delete: ")
+        locationId = input(
+            "Enter the id of the location you would like to delete: ")
         # If not available, print "Location not found"
         f = open("resources/locations.txt", "r")
         lines = f.readlines()
@@ -29,12 +32,14 @@ def locations():
         else:
             print("Location not found")
     if choice == 3:
-        locationId = input("Enter the id of the location you would like to change: ")
+        locationId = input(
+            "Enter the id of the location you would like to change: ")
         # If not available, print "Location not found"
         f = open("resources/locations.txt", "r")
         lines = f.readlines()
         if locationId in lines:
-            updateLocation(locationId, input("Enter the new name of the location: "))
+            updateLocation(locationId, input(
+                "Enter the new name of the location: "))
         else:
             print("Location not found")
     if choice == 4:
